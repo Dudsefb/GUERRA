@@ -2,7 +2,7 @@
 //+src=Player.cs
 //+src=Soldado.cs
 //+src=Tropa.cs
-//+src=Starter.cs
+//+src=Program.cs
 //+src=
 using System;
 using System.IO;
@@ -15,7 +15,7 @@ namespace Guerra
     public class Territorio
     {
         public readonly string nome;
-        private Player controlador = Starter.PLAYER_NULL;
+        private Player controlador = Program.PLAYER_NULL;
         public readonly int id;
         private int[] conexoes = new int[8];
         private Tropa[] tropas = new Tropa[100];
@@ -28,7 +28,7 @@ namespace Guerra
             }
         }
         public void updateControlador(){
-            controlador = Tropa[0].getController();
+            controlador = tropas[0].getController();
         }
         public Player getControlador(){
             return controlador;
@@ -59,7 +59,7 @@ namespace Guerra
             }
         }
         public int troops(){
-            
+            return 0;
         }
     }
 }
